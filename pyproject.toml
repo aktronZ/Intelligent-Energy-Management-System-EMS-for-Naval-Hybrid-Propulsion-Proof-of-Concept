@@ -1,0 +1,29 @@
+[project]
+name = "ems"
+version = "0.1.0"
+description = "Proof-of-concept Energy Management System for a hybrid electric naval vessel"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "numpy>=2.1",
+    "scipy>=1.15",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "PuLP>=2.9",
+    "gymnasium>=1.0",
+    "stable-baselines3>=2.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3", "ruff>=0.8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
